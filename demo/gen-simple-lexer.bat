@@ -1,0 +1,1 @@
+java -jar ..\dist\JLexPHP.jar simple.lex
