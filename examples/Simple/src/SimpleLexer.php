@@ -1,8 +1,10 @@
 <?php # vim:ft=php
-include 'jlex.php';
+namespace Demo;
+use JLexPHP\AbstractLexer;
+use JLexPHP\Token;
 
 
-class SimpleLexer extends JLexBase {
+class SimpleLexer extends AbstractLexer {
 
 	const YY_BUFFER_SIZE = 512;
 	const YY_F = -1;
@@ -12,7 +14,7 @@ class SimpleLexer extends JLexBase {
 	const YY_END = 2;
 	const YY_NO_ANCHOR = 4;
 	const YY_BOL = 128;
-	var $YY_EOF = 129;
+	const YY_EOF = 129;
 
 	protected $yy_count_chars = true;
 	protected $yy_count_lines = true;
@@ -88,7 +90,7 @@ class SimpleLexer extends JLexBase {
 		),
 	);
 
-	public function nextToken(): ?JLexToken {
+	public function nextToken(): ?Token {
 
 		$yy_anchor = self::YY_NO_ANCHOR;
 		$yy_state = self::$yy_state_dtrans[$this->yy_lexical_state];
@@ -112,7 +114,7 @@ class SimpleLexer extends JLexBase {
 			}
 
 			$yy_next_state = self::$yy_nxt[self::$yy_rmap[$yy_state]][self::$yy_cmap[$yy_lookahead]];
-			if ($this->YY_EOF == $yy_lookahead && true == $yy_initial) {
+			if ($this::YY_EOF == $yy_lookahead && true == $yy_initial) {
 				return null;
 			}
 

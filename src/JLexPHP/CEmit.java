@@ -219,7 +219,7 @@ class CEmit {
 
         // internal
         m_outstream.println("\tconst YY_BOL = " + m_spec.BOL + ";");
-        m_outstream.println("\tvar $YY_EOF = " + m_spec.EOF + ";");
+        m_outstream.println("\tconst YY_EOF = " + m_spec.EOF + ";");
         // external
         if (m_spec.m_integer_type || true == m_spec.m_yyeof) {
             m_outstream.println("\tconst YYEOF = -1;");
@@ -707,7 +707,7 @@ class CEmit {
         m_outstream.print(new String(m_spec.m_class_name, 0,
                 m_spec.m_class_name.length));
 
-        m_outstream.print(" extends JLexBase ");
+        m_outstream.print(" extends AbstractLexer ");
 
         if (m_spec.m_implements_name.length > 0) {
             m_outstream.print(" implements ");
@@ -1000,7 +1000,7 @@ class CEmit {
         }
 
         // handle bare EOF.
-        m_outstream.println("\t\t\tif ($this->YY_EOF == $yy_lookahead " + "&& true == $yy_initial) {");
+        m_outstream.println("\t\t\tif ($this::YY_EOF == $yy_lookahead " + "&& true == $yy_initial) {");
         if (null != m_spec.m_eof_code) {
             m_outstream.println("\t\t\t\t$this->yy_do_eof();");
         }

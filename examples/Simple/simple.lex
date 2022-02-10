@@ -1,5 +1,8 @@
 <?php # vim:ft=php
-include 'jlex.php';
+namespace Demo;
+
+use JLexPHP\AbstractLexer;
+use JLexPHP\Token;
 
 %%
 

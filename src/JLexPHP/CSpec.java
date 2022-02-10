@@ -124,7 +124,6 @@ class CSpec {
         'e', 'x'
     };
     char m_type_name[] = {
-        'J', 'L', 'e', 'x', 
         'T', 'o', 'k', 'e', 'n'
     };
 
