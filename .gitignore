@@ -26,3 +26,5 @@ hs_err_pid*
 /nbproject
 /test
 
+/examples/Simple/vendor
+/examples/Simple/*.lock

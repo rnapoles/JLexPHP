@@ -1,9 +1,6 @@
 <?php # vim:ft=php
 namespace Demo;
 
-use JLexPHP\AbstractLexer;
-use JLexPHP\Token;
-
 %%
 
 %{
@@ -11,6 +8,7 @@ use JLexPHP\Token;
 %}
 
 
+%class SimpleLexer
 %function nextToken
 %line
 %char
