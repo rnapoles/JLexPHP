@@ -1,0 +1,23 @@
+{
+    "name": "rnapoles/j-lex-php-demo",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Demo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Reinier Nápoles Martínez",
+            "email": "rnapoles86@gmail.com"
+        }
+    ],
+    "require": {
+        "rnapoles/jlex-php-library": "dev-main"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "7.2.x-dev"
+    }
+}
